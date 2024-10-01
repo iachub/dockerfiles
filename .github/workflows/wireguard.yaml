@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-push:
-    uses: iachub/github/.github/workflows/t-docker-build-push.yaml
+    uses: iachub/github/.github/workflows/t-docker-build-push.yaml@main
     with:
       work-dir: "wireguard/"
       image-name: "iachub/wireguard"
