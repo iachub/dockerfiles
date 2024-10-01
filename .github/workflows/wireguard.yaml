@@ -1,0 +1,18 @@
+name: wireguard
+on:
+  push:
+    paths:
+      - "wireguard/**"
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-push:
+    uses: iachub/github/.github/workflows/t-docker-build-push.yaml
+    with:
+      work-dir: "wireguard/"
+      image-name: "iachub/wireguard"
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
